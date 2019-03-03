@@ -1,2 +1,2 @@
 # VirtualWaiter
-Гілка Петріва Юліана
+This is the branch of Julian Petriv.
