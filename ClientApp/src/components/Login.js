@@ -1,7 +1,7 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { actionCreators } from '../store/Login';
+// import { actionCreators } from '../store/Login';
 
 const Login = props =>(
 <div>
@@ -18,14 +18,14 @@ const Login = props =>(
         <input id="password" type="password" placeholder="Password" ></input>
         <br></br>
         <br></br>
-        <button onClick={props.enter}></button>
+        {/* <button onClick={props.enterLogin}></button> */}
     </form>
 </div>
 
 );
 
 export default connect(
-    dispatch => bindActionCreators(actionCreators, dispatch),
-    username => username.value,
-    password => password.value
+   // dispatch => bindActionCreators(enterLogin, dispatch)
+    //username => username.value,
+    //password => password.value
   )(Login);
