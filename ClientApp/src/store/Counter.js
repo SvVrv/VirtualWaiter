@@ -2,7 +2,7 @@
 const decrementCountType = 'DECREMENT_COUNT';
 const initialState = { count: 0 };
 
-export const actionCreators = {
+export const actionCreators = { 
   increment: () => ({ type: incrementCountType }),
   decrement: () => ({ type: decrementCountType })
 };
