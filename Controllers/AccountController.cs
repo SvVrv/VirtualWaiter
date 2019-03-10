@@ -53,7 +53,7 @@ namespace WebSiteCore.Controllers
                 .PasswordSignInAsync(credentials.Email, credentials.Password,
                 false, false);
             if (!result.Succeeded)
-                return BadRequest();
+                return BadRequest(new { invalid = "Не коректно вкзано дані"});
             var user = await _userManager.FindByEmailAsync(credentials.Email);
             await _signInManager.SignInAsync(user, isPersistent: false);
             return Ok(CreateToken(user));
