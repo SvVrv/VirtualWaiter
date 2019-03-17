@@ -78,7 +78,7 @@ namespace WebSiteCore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
+			app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -95,8 +95,7 @@ namespace WebSiteCore
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
-
-            SeederDB.SeedDataByAS(app.ApplicationServices);
+			SeederDB.SeedDataByAS(app.ApplicationServices);
         }
     }
 }

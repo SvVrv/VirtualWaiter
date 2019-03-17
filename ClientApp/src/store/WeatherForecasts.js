@@ -1,4 +1,6 @@
-﻿const requestWeatherForecastsType = 'REQUEST_WEATHER_FORECASTS';
+﻿import axios from 'axios';
+
+const requestWeatherForecastsType = 'REQUEST_WEATHER_FORECASTS';
 const receiveWeatherForecastsType = 'RECEIVE_WEATHER_FORECASTS';
 const initialState = { forecasts: [], isLoading: false };
 
@@ -12,8 +14,7 @@ export const actionCreators = {
     dispatch({ type: requestWeatherForecastsType, startDateIndex });
 
     const url = `api/SampleData/WeatherForecasts?startDateIndex=${startDateIndex}`;
-    const response = await fetch(url);
-    const forecasts = await response.json();
+    const forecasts = await axios.get(url).then(res => res.data);
 
     dispatch({ type: receiveWeatherForecastsType, startDateIndex, forecasts });
   }
