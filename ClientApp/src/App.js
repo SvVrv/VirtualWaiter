@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Counter from './components/Counter';
 import LoginPage from './components/auth/login/LoginPage';
 import FetchData from './components/FetchData';
+import UserPage from './components/users/UserPage';
 
 export default () => (
   <Layout>
@@ -12,5 +13,6 @@ export default () => (
     <Route path='/counter' component={Counter} />
     <Route path='/fetchdata/:startDateIndex?' component={FetchData} />
     <Route path='/login' component={LoginPage} />
+    <Route path='/users' component={UserPage} />
 </Layout>
 );
