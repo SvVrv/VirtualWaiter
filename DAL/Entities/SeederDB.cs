@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace WebSiteCore.DAL.Entities
 {
+
     public class SeederDB
     {
+        public static String[] Roles = { "Client","Waiter","Cooker","Manager","Director","Admin"};
+
         public static void SeedData(UserManager<DbUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
@@ -30,6 +33,17 @@ namespace WebSiteCore.DAL.Entities
                 }).Result;
 
                 result = userManager.AddToRoleAsync(user, roleName).Result;
+            }
+            foreach (var name in Roles)
+            {
+                var role = roleManager.FindByNameAsync(name).Result;
+                if (role == null)
+                {
+                    var result = roleManager.CreateAsync(new IdentityRole
+                    {
+                        Name = name
+                    }).Result;
+                }
             }
         }
         public static void SeedDataByAS(IServiceProvider services)
