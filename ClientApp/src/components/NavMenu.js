@@ -60,6 +60,13 @@ class NavMenu extends Component {
                                 <Glyphicon glyph="th-list" /> Users
                             </NavItem>
                         </LinkContainer>
+
+
+                        <LinkContainer to={"/tables"}>
+                            <NavItem>
+                                <Glyphicon glyph="th-list" /> Столики
+                            </NavItem>
+                        </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
